@@ -49,7 +49,10 @@ class BasketBitrix
         $product_string = '';
         foreach ($this->basket as $value) {
             $price = $value['PRICE'] *  $value['QUANTITY'] ;
-            $product_string .= "Name: {$value['NAME']} quantity:{$value['QUANTITY']}. Price: {$price}";
+                        $product_string .= <<<PRODUCT
+ Name: {$value['NAME']} . quantity: {$value['QUANTITY']} . Price: {$price}
+ 
+PRODUCT;
         }
 
         return $product_string;
